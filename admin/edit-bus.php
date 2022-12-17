@@ -1,0 +1,50 @@
+<?php
+include('../dbconnection.php');
+if(isset($_POST['submit'])){
+    $licenseno=$_POST['licenseno'];
+    $busname=$_POST['busname'];
+    $driver=$_POST['driver'];
+    $driver_phno=$_POST['phno'];
+
+    $sql="INSERT INTO buses VALUES('$licenseno','$busname','$driver','$driver_phno')";  
+    mysqli_query($conn, $sql);
+}
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus Pass Management System | Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <div id="container-fluid">
+        <?php include_once('header.php');?>
+        <div class="row">
+        <?php include_once('sidebar.php');?>
+        <div class="col me-4">
+            <h1>ADD BUS DETAILS</h1>
+            <form action="add-bus.php" method="post">
+                <div class="container">
+                    <label for="licenseno"><b>License Number</b></label>
+                    <input type="text" placeholder="Enter License Number" name="licenseno" id="licenseno" value=<?php echo($row['licenseno'])?> required>    
+
+                    <label for="busname"><b>Bus Name</b></label>
+                    <input type="text" placeholder="Enter bus name" name="busname" id="busname" value=<?php echo($row['bus_name'])?> required>
+
+                    <label for="driver"><b>Driver Name</b></label>
+                    <input type="text" placeholder="Enter driver name" name="driver" id="driver" value=<?php echo($row['driver_name'])?> required>
+
+                    <label for="driver"><b>Phone Number</b></label>
+                    <input type="text" placeholder="Enter phone number" name="phno" id="phno" value=<?php echo($row['driver_phno'])?> maxlength="10" required>
+
+                    <button type="submit" class="registerbtn" name="submit" id="submit">Add Bus</button>
+                </div>
+                </form>
+        </div>
+        </div>   
+</body>
+</html>       
