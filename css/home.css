@@ -1,0 +1,56 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* background-color: #333; */
+  }
+  
+  li {
+    float: left;
+  }
+  
+  h1{
+      text-align: center;
+  }
+  
+  li a {
+    display: block;
+    color: #111;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+  }
+  
+li a:hover {
+    color: #111;
+    font-weight: 600;
+  }
+  
+  .active {
+    color: #111;
+    
+  }
+  .pic{
+    margin-left: 20%;
+    margin-right: auto;
+  }
+  
+  body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: 400px * 400px;
+    background-position-y: center;
+    background-position-x: center;
+  }
+
+  .carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
