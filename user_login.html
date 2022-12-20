@@ -69,20 +69,20 @@ a {
 </head>
 <body>
 
-<form action="http://localhost/BUS_PASS/view_pass.php" method="post">
+<form action="user_login.php" method="post">
   <div class="container">
-    <h1>View Pass</h1>
+    <h1>User Login</h1>
     <hr>
 
-    <label for="name"><b>Name</b></label>
-    <input type="text" placeholder="Enter Name" name="name" id="name" required>
+    <label for="user"><b>KTU ID</b></label>
+    <input type="text" placeholder="Enter Username" name="user" id="user" required>
 
-    <label for="ktu"><b>KTU ID</b></label>
-    <input type="text" placeholder="Enter KTU-ID" name="ktu" id="ktu" required>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
 
     <hr>
 
-    <button type="submit" class="registerbtn">View Pass Status</button>
+    <button type="submit" class="registerbtn">Login</button>
   </div>
   
   <!-- <div class="container signin">

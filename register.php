@@ -9,10 +9,18 @@ include('dbconnection.php');
 $name=$_POST['name'];
 $email=$_POST['email'];
 $ktu=$_POST['ktu'];
-$boarding=$_POST['boarding'];
+$password=$_POST['password'];
+$cpwd=$_POST['cpwd'];
 
-$sql="INSERT INTO registered VALUES('$ktu','$name','$email','$boarding',0)";  
+if($cpwd!=$password){
+    echo  '<script>alert("Passwords do not match")</script>';
+    echo "<script>window.location.href = 'register.html'</script>";  
+}
+else{
+  
+$sql="INSERT INTO registered VALUES('$ktu','$name','$email',NULL,'$password',0,NULL,NULL)";  
 if(mysqli_query($conn, $sql)){  
+  echo "<script>window.location.href = 'user_login.html'</script>"; 
  echo "<p>applied for bus-pass successfully</p>";
   
  $mail = new PHPMailer(true);
@@ -39,7 +47,7 @@ if(mysqli_query($conn, $sql)){
      $mail->send();
      echo "Mail has been sent successfully!";
    } catch (Exception $e) {
-     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
   }
  
 }
@@ -50,4 +58,5 @@ else
   
 echo "<a href='./home.html'>Return to Home Page</a>";
 mysqli_close($conn);  
+}
 ?>

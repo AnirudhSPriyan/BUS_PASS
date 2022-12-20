@@ -1,8 +1,5 @@
 <?php
 include('../dbconnection.php');
-// if (strlen($_SESSION['bpmsaid']==0)) {
-//   header('location:logout.php');
-//   } else {
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +7,7 @@ include('../dbconnection.php');
     <title>Bus Pass Management System | Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="table.css">
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -22,31 +20,12 @@ include('../dbconnection.php');
                 <div class="col-lg-12">
                 <h1 class="page-header">Manage Pass</h1>
                     <?php    
-      $sql="SELECT * FROM registered";  
+      $sql="SELECT * FROM registered where approved = 1";  
       $retval=mysqli_query($conn, $sql);  
-
-      echo "<style>
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-      
-      th, td {
-        text-align: left;
-        padding: 8px;
-      }
-      
-      tr:nth-child(even){background-color: #f2f2f2}
-      
-      th {
-        background-color: #04AA6D;
-        color: white;
-      }
-      </style>";
 
       if(mysqli_num_rows($retval) > 0)
       {  
-        echo "<table><tr><th>KTU ID</th><th>NAME</th><th>EMAIL</th><th>BOARDING</th><th>APPROVAL STATUS</th></tr>";
+        echo "<table><tr><th>KTU ID</th><th>NAME</th><th>EMAIL</th><th>BOARDING</th><th>ACTION</th></tr>";
         while($row = mysqli_fetch_assoc($retval))
         {  
           echo "<tr><td>{$row['ktuid']} </td>   
@@ -62,9 +41,6 @@ include('../dbconnection.php');
       {  
         echo "0 results";  
       }  
-
-  
-// echo "<a href='./home.html'>Return to Home Page</a>";
         mysqli_close($conn);  
         ?>
                 </div>
