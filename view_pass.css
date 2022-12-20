@@ -8,9 +8,9 @@ body {
 }
 
 .off {
-    font-size: 30px;
+    /* font-size: 30px; */
     margin-top: -16px !important;
-    color: blue;
+    color: rgb(41, 41, 100) !important;
 }
 
 .flat {
@@ -24,9 +24,14 @@ body {
 
 .line {
     padding-right: 8rem !important;
-    padding-left: 8rem !important
+    padding-left: 8rem !important;
 }
 
 .line hr {
     height: 2px
+}
+
+.buspass{
+    color: rgb(56, 56, 148) !important;
+
 }

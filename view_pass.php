@@ -18,19 +18,23 @@ include('dbconnection.php');
         <div class="col-md-5">
             <div class="card">
                
-                <div > 
+                <div class="buspass"> 
                 <div class="line">
                     <hr>
                 </div>
-               
-                <div class="d-flex justify-content-center px-2">
+                <div class ="text-center">
+                <h2> College of Engineering Trivandrum </h2> 
+                        <h3> Bus Pass</h3>
+                </div>
+                <div class="d-flex  px-2">
                     <div class="d-flex flex-row">
-                        <h6 class="mt-0 off"><?php
+                    
+                        <h5 class="mt-0 off"><?php
                if(isset($_SESSION["ktuid"])){
                   $ktu = $_SESSION["ktuid"];
                   $sql="SELECT * FROM registered WHERE ktuid='$ktu'";  
-                  $retval=mysqli_query($conn, $sql);  
-                  
+                  $retval=mysqli_query($conn, $sql);
+                            
                   if(mysqli_num_rows($retval) > 0){  
                       while($row = mysqli_fetch_assoc($retval)){  
                          echo "KTU ID :{$row['ktuid']}  <br> ".  
@@ -39,7 +43,7 @@ include('dbconnection.php');
                               "SEMESTER : {$row['semester']} <br> ". 
                               "BUS : {$row['busname']} <br> ". 
                               "BOARDING : {$row['boarding']} <br> ".
-                              "APPROVAL STATUS : {$row['approved']} <br> ";  
+                              "APPROVAL STATUS : {$row['approved']} <br>";  
                       } 
                       
                      }else{  
@@ -47,7 +51,7 @@ include('dbconnection.php');
                      }  
                   mysqli_close($conn); 
                   }
-                  ?></h6> 
+                  ?></h5> 
                     </div>
                 </div>
                 <div class="line">
