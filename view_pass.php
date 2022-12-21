@@ -36,14 +36,19 @@ include('dbconnection.php');
                   $retval=mysqli_query($conn, $sql);
                             
                   if(mysqli_num_rows($retval) > 0){  
-                      while($row = mysqli_fetch_assoc($retval)){  
-                         echo "KTU ID :{$row['ktuid']}  <br> ".  
-                              "NAME : {$row['name']} <br> ".  
-                              "EMAIL : {$row['email']} <br> ".  
-                              "SEMESTER : {$row['semester']} <br> ". 
-                              "BUS : {$row['busname']} <br> ". 
-                              "BOARDING : {$row['boarding']} <br> ".
-                              "APPROVAL STATUS : {$row['approved']} <br>";  
+                      while($row = mysqli_fetch_assoc($retval)){
+                                    if ($row['approved'] == 1) {
+                                        echo "KTU ID :{$row['ktuid']}  <br> " .
+                                            "NAME : {$row['name']} <br> " .
+                                            "EMAIL : {$row['email']} <br> " .
+                                            "SEMESTER : {$row['semester']} <br> " .
+                                            "BUS : {$row['busname']} <br> " .
+                                            "BOARDING : {$row['boarding']} <br> " .
+                                            "APPROVAL STATUS : {$row['approved']} <br>";
+                                    }
+                                    else{
+                                        echo "<h6> Bus Pass not yet issued</h6>";
+                                    }
                       } 
                       
                      }else{  

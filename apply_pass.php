@@ -56,7 +56,11 @@ if(isset($_POST['submit'])){
     </br>
     <select name="boarding" id="boarding">
         <option disabled selected vauser_login.htmlue> -- select an option -- </option>
-       
+        <option value="Ullor"> Ulloor </option>
+        <option value="Ullor"> Sreekaryam </option>
+        <option value="Ullor"> Keshavadasapuram </option>
+        <option value="Ullor"> Pattomr </option>
+
        
     </select>
    
@@ -66,10 +70,6 @@ if(isset($_POST['submit'])){
   
   
 </form>
-<script>
-// function reset(){
-//    document.getElementById("reg_form").reset();
-// }
-// </script>
+
 </body>
 </html>
