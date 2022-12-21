@@ -27,9 +27,9 @@ if(isset($_POST['submit'])){
         <?php include_once('sidebar.php');?>
         <div class="col me-4">
             <div class="row" style="margin-left:150px;">
-            <h1>ADD BUS DETAILS</h1>
+            <h2>Add Bus Details</h2>
             <form action="add-bus.php" method="post">
-                <div class="container">
+                
                     <label for="licenseno"><b>License Number</b></label>
                     <input type="text" placeholder="Enter License Number" name="licenseno" id="licenseno" required>    
 
@@ -43,7 +43,7 @@ if(isset($_POST['submit'])){
                     <input type="text" placeholder="Enter phone number" name="phno" id="phno" maxlength="10" required>
 
                     <button type="submit" class="registerbtn" name="submit" id="submit">Add Bus</button>
-                </div>
+                
                 </form>
 </div>
         </div>

@@ -7,11 +7,27 @@ include('dbconnection.php');
     <title>Bus Pass Management System | Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    
 </head>
 <body>
-        <h1 class="page-header mx-5 my-3">View Bus routes</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">CET BUS PASS MANAGEMENT SYSTEM</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto">
+        <li><a class="active" href="home.html">Home</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container mt-5">
+        <h2 class="page-header mt-5 pt-3">View Bus routes</h2>
         <form method="post">
-                <label class="mx-5">Select a bus name to search</label>
+                <label >Select a bus name to search</label>
                         <select class="my-3 mx-5" name="bus" id="bus">
                         <option disabled selected vauser_login.htmlue> -- select an option -- </option>
                         <?php
@@ -39,14 +55,10 @@ include('dbconnection.php');
             $ret=mysqli_query($conn, $query);
             
             echo "<style>
-            h6{
-                margin-left: 10%;
-                margin-right: 20%;
-            }
             table {
                 border-collapse: collapse;
                 width: 50%;
-                margin-left: 10%;
+                
                 margin-right: 20%;
             }
             
@@ -90,6 +102,7 @@ include('dbconnection.php');
                         
         }
         ?> 
+        </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>       
