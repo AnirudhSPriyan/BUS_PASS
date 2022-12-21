@@ -28,7 +28,7 @@ if(isset($_GET['delid'])){
         <div class="row">
         <?php include_once('sidebar.php');?>
         <div class="col mx-3">
-            <div class="row">
+            <div class="row" style="margin-left:150px;" >
                 <div class="col-lg-12">
                 <h1 class="page-header">Manage Bus</h1>
                 <table>

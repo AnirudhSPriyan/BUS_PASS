@@ -23,9 +23,10 @@ if(isset($_POST['submit'])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <div id="container-fluid">
         <?php include_once('header.php');?>
-        <div class="row">
+        <div class="row" >
         <?php include_once('sidebar.php');?>
         <div class="col me-4">
+            <div class="row" style="margin-left:150px;">
             <h1>ADD BUS DETAILS</h1>
             <form action="add-bus.php" method="post">
                 <div class="container">
@@ -44,6 +45,7 @@ if(isset($_POST['submit'])){
                     <button type="submit" class="registerbtn" name="submit" id="submit">Add Bus</button>
                 </div>
                 </form>
+</div>
         </div>
         </div>   
 </body>

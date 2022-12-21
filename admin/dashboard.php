@@ -21,8 +21,8 @@ if(isset($_GET['id'])){
         <?php include_once('header.php');?>
         <div class="row">
         <?php include_once('sidebar.php');?>
-        <div class="col-lg-6">
-            <div class="row">
+        <div class="col-lg-6" >
+            <div class="row" style="margin-left:150px;">
                 <div class="col-lg-12">
                     <h1 class="page-header">Dashboard</h1>
                     <div>
@@ -50,8 +50,8 @@ if(isset($_GET['id'])){
                                 <td>{$row['boarding']}</td>
                                 <td>";
                             ?>
-                            <button class="btn btn-danger">
-                                <a href="dashboard.php?id=<?php echo($row['ktuid'])?>" onclick="return confirm('Are you sure to approve?');">Approve</a></button>
+                            <button class="btn btn-success">
+                                <a class="text" style="color:white;text-decoration:none;" href="dashboard.php?id=<?php echo($row['ktuid'])?>" onclick="return confirm('Are you sure to approve?');">Approve</a></button>
          
                                 </td>
                             </tr>                        

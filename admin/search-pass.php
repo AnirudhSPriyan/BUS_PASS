@@ -17,9 +17,10 @@ include('../dbconnection.php');
         <?php include_once('header.php');?>
         <div class="row">
         <?php include_once('sidebar.php');?>
-        <div class="col me-4">
+        <div class="col me-4" >
+            
+            <div class="row" style="margin-left:150px;" >
             <h1 class="page-header">Search Pass</h1>
-            <div class="row">
                 <form method="post">
                         <label>Search by Pass Number/Mobile Number</label>
                         <div class="d-flex">
@@ -38,6 +39,7 @@ include('../dbconnection.php');
                     table {
                         border-collapse: collapse;
                         width: 100%;
+                        margin-left:150px;
                     }
                     
                     th, td {
